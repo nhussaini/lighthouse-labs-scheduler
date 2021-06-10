@@ -42,13 +42,29 @@ const appointments = [
 export default function Application(props) {
   
   //useState hook
-  const [day, setDay] = useState("Monday");
-  const [days, setDays] = useState([]);
+  // const [day, setDay] = useState("Monday");
+  // const [days, setDays] = useState([]);
+  //Replacing all the above individual states with the following: 
+  const [state, setState] = useState({
+    day: "Monday",
+    days: [],
+    // you may put the line below, but will have to remove/comment hardcoded appointments variable
+    appointments: {}
+  });
+  const setDay = day => {
+    console.log("day from setDay:", day);
+    return setState({ ...state, day:day })};
+
+  // setState(prev => ({ ...prev, days }));
+  const setDays = (days) => {
+    //... your code here ...
+    setState(prev => setState({...prev, days}));
+  }
 
   useEffect(()=>{
     const dayURL = "http://localhost:8001/api/days";
     axios.get(dayURL).then(response =>{
-      console.log(response.data)
+      // console.log(response.data)
       setDays([...response.data]);
     })
   },[]);
@@ -88,8 +104,8 @@ export default function Application(props) {
        <hr className="sidebar__separator sidebar--centered" />
        <nav className="sidebar__menu">
         <DayList
-          days={days}
-          day={day}
+          days={state.days}
+          day={state.day}
           setDay={setDay}
         />
        </nav>
