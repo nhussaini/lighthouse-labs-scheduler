@@ -54,7 +54,7 @@ export default function Application(props) {
   });
   // console.log("days from state: ",state.days)
   // console.log("appointments from state: ",state.appointments);
-  console.log("interviewers from state: ", state.interviewers);
+    // console.log("interviewers from state: ", state.interviewers);
 
  
 
@@ -90,6 +90,45 @@ export default function Application(props) {
     })
   },[]);
 
+  //function to book an interview
+  function bookInterview(id, interview) {
+    // console.log(id, interview);
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    // let req = {
+    //   url,
+    //   method: 'PUT',
+    //   data: content
+    // }
+    // axios(req).then(response => {
+    //   resolve(response.data.content)
+    // }, response => {
+    //   this.handleEditError(response)
+    // })
+
+    const url =`http://localhost:8001/api/appointments/${id}`;
+
+    let req={
+      url,
+      method: 'PUT',
+      data: appointment
+    }
+    return axios(req).then(response => {
+      console.log("response from axios put=====>", response.data);
+      setState({...state, appointments})
+    })
+
+
+
+  }
   
 
    //get the daily appointemnts from the the helper function
@@ -99,7 +138,13 @@ export default function Application(props) {
 
   const schedule = appointments.map((appointment) => {
   const interview = getInterview(state, appointment.interview);
+  console.log("interview==>", interview);
   const interviewers = getInterviewersForDay(state,state.day)
+
+
+  
+
+
 
   return (
     <Appointment
@@ -108,6 +153,8 @@ export default function Application(props) {
       time={appointment.time}
       interview={interview}
       interviewers={interviewers}
+      bookInterview={bookInterview}
+     
     />
   );
 });
