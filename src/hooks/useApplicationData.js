@@ -66,7 +66,7 @@ export default function useApplicationData() {
       };
 
       const dayOfWeek = findDay(state.day)
-
+      // console.log("days=====>", ...state.days[dayOfWeek]);
       let day = {
         ...state.days[dayOfWeek],
         spots: state.days[dayOfWeek]
@@ -132,7 +132,7 @@ export default function useApplicationData() {
       data:appointment
     }
     return axios(req).then(response =>{
-      console.log("response from delete axios===>",response);
+      // console.log("response from delete axios===>",response);
       setState({...state, appointments, days});
     })
 
