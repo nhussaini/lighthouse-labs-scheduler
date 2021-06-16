@@ -12,7 +12,6 @@ import Error from "./Error";
 
 
 export default function Appointment(props) {
-  // console.log("props.interview: ", props.interview.interviewer.name);
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -48,7 +47,6 @@ export default function Appointment(props) {
     props.cancelInterview(props.id)
     .then(() => transition(EMPTY))
     .catch(() => {
-      console.log("inside the catch block........");
       transition(ERROR_DELETE,true)
 
      });
@@ -58,8 +56,6 @@ export default function Appointment(props) {
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time}/>
-      {/* {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer.name}/>: <Empty />} */}
-
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
       <Show
@@ -75,7 +71,6 @@ export default function Appointment(props) {
          interviewers={props.interviewers}
         
          onCancel={() => back(EMPTY)}
-        // onCancel={back}
 
          bookInterview={props.bookInterview} 
          onSave={save}
@@ -96,7 +91,6 @@ export default function Appointment(props) {
 
       {mode === EDIT && (
         <Form
-        // name={props.interview.student}
         interviewer={props.interviewer}
         interviewers={props.interviewers}
         onSave={save}

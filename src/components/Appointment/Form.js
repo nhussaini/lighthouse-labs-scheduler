@@ -35,7 +35,6 @@ export default function Form(props) {
           name="name"
           type="text"
           placeholder="Enter Student Name"
-          // placeholder = {name ? name : "Enter student Name"}
           value={name}
           onChange={(event) => setName(event.target.value)}
           data-testid="student-name-input"
@@ -47,12 +46,7 @@ export default function Form(props) {
         <section className="appointment__card-right">
           <section className="appointment__actions">
             <Button danger onClick={cancel}>Cancel</Button>
-            {/* <Button confirm onClick={()=>props.onSave(name, interviewer)} >Save</Button> */}
             <Button confirm onClick={event => validate()} >Save</Button>
-
-           {/* <Button confirm onClick={validate}>
-            Save
-           </Button> */}
           </section>
         </section>
     </main> 

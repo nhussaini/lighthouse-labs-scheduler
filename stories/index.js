@@ -105,14 +105,6 @@ storiesOf("Button", module)
           selected
         />
       ))
-      // .add("Clickable", () => (
-      //   <InterviewerListItem
-      //     id={interviewer.id}
-      //     name={interviewer.name}
-      //     avatar={interviewer.avatar}
-      //     setInterviewer={action("setInterviewer")}
-      //   />
-      // ));
       .add("Clickable", () => (
         <InterviewerListItem
           id={interviewer.id}
