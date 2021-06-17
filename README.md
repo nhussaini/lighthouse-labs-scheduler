@@ -49,7 +49,9 @@ _A user can choose any empty slot to book an appointment
 !['book-an-appointment'](https://github.com/nhussaini/lighthouse-labs-scheduler/blob/master/docs/no_spot_available.png?raw=true)
 
 ### Deleting an appointment
-!['book-an-appointment'](https://github.com/nhussaini/lighthouse-labs-scheduler/blob/master/docs/no_spot_available.png?raw=true)
+!['book-an-appointment'](https://github.com/nhussaini/lighthouse-labs-scheduler/blob/master/docs/delete_appointment.png?raw=true)
+_When a user wants to delete an appointment, there will be a confirmation popup
+
 
 ## API server/*Database Setup
 
