@@ -48,6 +48,9 @@ _A user can choose any empty slot to book an appointment
 ### No slot available for a specific day
 !['book-an-appointment'](https://github.com/nhussaini/lighthouse-labs-scheduler/blob/master/docs/no_spot_available.png?raw=true)
 
+### Deleting an appointment
+!['book-an-appointment'](https://github.com/nhussaini/lighthouse-labs-scheduler/blob/master/docs/no_spot_available.png?raw=true)
+
 ## API server/*Database Setup
 
 For full functionality both must run concurrently: the client and the API server applications.
