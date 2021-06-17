@@ -37,7 +37,16 @@ npm test
 ```sh
 npm run storybook
 ```
+### Daily view
+!['booked-slots-available'](https://github.com/nhussaini/lighthouse-labs-scheduler/blob/master/docs/appointment_page.png?raw=true)
+_By selecting a weekday , a user can see booked appointments and available slots for each day._
 
+### Book an Appointment
+!['book-an-appointment'](https://github.com/nhussaini/lighthouse-labs-scheduler/blob/master/docs/new_appointment.png?raw=true)
+_A user can choose any empty slot to book an appointment
+
+### No slot available for a specific day
+!['book-an-appointment'](https://github.com/nhussaini/lighthouse-labs-scheduler/blob/master/docs/no_spot_available.png?raw=true)
 
 ## API server/*Database Setup
 
