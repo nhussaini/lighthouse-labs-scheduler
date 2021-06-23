@@ -19,9 +19,9 @@ export default function useApplicationData() {
   };
 
   useEffect(()=>{
-    const dayURL = "http://localhost:8001/api/days";
-    const appointmentURL = "http://localhost:8001/api/appointments";
-    const interviewersURL = "http://localhost:8001/api/interviewers";
+    const dayURL = "/api/days";
+    const appointmentURL = "/api/appointments";
+    const interviewersURL = "/api/interviewers";
     Promise.all([
       axios.get(dayURL),
       axios.get(appointmentURL),
@@ -78,7 +78,7 @@ export default function useApplicationData() {
       days[dayOfWeek] = day;
   
   
-      const url =`http://localhost:8001/api/appointments/${id}`;
+      const url =`/api/appointments/${id}`;
       return axios.put(url, appointment).then(() => {
         setState({...state, appointments,days});
       })
